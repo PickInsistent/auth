@@ -28,8 +28,11 @@
         <property name="maxActive" value="20" />
     </bean>
 
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
+        <!-- 批量别名 -->
+        <property name="typeAliasesPackage" value="com.sunrise.auth.entity"></property>
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations" value="classpath:mapping/*.xml"></property>
     </bean>
@@ -37,10 +40,5 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.sunrise.auth.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-    </bean>
-
-    <bean id="transactionManager"
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource" />
     </bean>
 </beans>
