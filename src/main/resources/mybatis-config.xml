@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 全局参数配置，在需要时候进行配置 -->
+    <!-- <settings></settings> -->
+
+    <!-- 批量设置(推荐使用)
+            指定包名，mybatis自动扫描扫描po类，自动定义别名。默认为类名（首字母大写或小写） -->
+    <typeAliases>
+        <package name="com.sunrise.auth.entity"/>
+    </typeAliases>
+</configuration>
